@@ -1,0 +1,59 @@
+<html>
+  <head> </head>
+
+  <body>
+    <div align="center">
+      <h1>Batting Statistics in T20 Match</h1>
+      <canvas id="Canvas1" width="850" height="500"></canvas>
+    </div>
+
+    <script type="text/javascript">
+      var canvas = document.getElementById("Canvas1");
+      var context = canvas.getContext("2d");
+      context.font = "16px Arial";
+
+      var bot = 425;
+      var topp = 25;
+      var left = 25;
+      var right = 775;
+      var graphHeight = 400;
+      var graphWidth = 850;
+
+      context.beginPath();
+      context.moveTo(right, topp);
+      context.lineTo(right, bot);
+      context.lineTo(left, bot);
+      context.stroke();
+
+      context.fillText("Runs", right / 3, bot + 50);
+      context.fillText("Overs", right + 30, graphHeight / 2);
+      context.beginPath();
+      context.strokeStyle = "#BBB";
+      yscale = 100;
+      for (let index = 0; index < 4; index++) {
+        context.moveTo(left, topp + index * yscale);
+        context.lineTo(right, topp + index * yscale);
+        context.fillText((4 - index) * 5, right + 5, topp + index * yscale + 5);
+      }
+      context.stroke();
+
+      context.beginPath();
+      context.strokeStyle = "#BBB";
+      xscale = (right - left) / 15;
+      for (let index = 0; index < 16; index++) {
+        context.moveTo(left + index * xscale, topp);
+        context.lineTo(left + index * xscale, bot);
+        context.fillText(index * 10, left + index * xscale - 10, bot + 20);
+      }
+      context.stroke();
+
+      context.beginPath();
+      context.strokeStyle = "#FF0000";
+      context.moveTo(left, bot);
+      context.lineTo(left + 4 * xscale, bot - yscale);
+      context.lineTo(left + 7.5 * xscale, bot - 2 * yscale);
+      context.lineTo(left + 14 * xscale, bot - 3 * yscale);
+      context.stroke();
+    </script>
+  </body>
+</html>

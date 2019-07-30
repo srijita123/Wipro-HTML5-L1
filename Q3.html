@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vide Online</title>
+  </head>
+  <body>
+    <section style="text-align: center">
+      <img
+        src="https://tru-vue.com/wp-content/uploads/2015/11/video-icon.jpg"
+        style="display: inline"
+        alt="Video"
+        width="50"
+      />
+      <h1 style="display: inline">Awesome Online videos</h1>
+    </section>
+    <section>
+      <div style="text-align:center">
+        <video id="video1" width="420">
+          <source
+            src="http://techslides.com/demos/sample-videos/small.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <br /><br />
+        <button onclick="play()">Play</button>
+        <button onclick="pause()">Pause</button>
+      </div>
+      <script>
+        var myVideo = document.getElementById("video1");
+        function play() {
+          if (myVideo.paused) myVideo.play();
+        }
+        function pause() {
+          if (myVideo.play) myVideo.pause();
+        }
+      </script>
+    </section>
+  </body>
+</html>
